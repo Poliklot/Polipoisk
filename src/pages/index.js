@@ -123,9 +123,21 @@ const links = [
   },
 ]
 
+
+const edit = () => {
+  fetch('http://194.67.92.100/api/v1/halls')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  }); 
+}
+
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
+      <button onClick={() => edit()}>edit</button>
       <h1 style={headingStyles}>
         Congratulations
         <br />
@@ -173,4 +185,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Polipoisk</title>
